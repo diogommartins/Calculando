@@ -14,6 +14,12 @@
 
 @implementation FirstViewController
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.game = [MultiplicationGame new];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -24,4 +30,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)changeLabels{
+    [self.game changeCurrentOperation];
+    self.lblFirstNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation firstNumber]];
+    self.lblSecondNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation secondNumber]];
+}
+
+- (IBAction)changeOperation:(UIButton *)sender {
+    [self changeLabels];
+}
+
+- (IBAction)sendAnswer:(UIButton *)sender {
+}
 @end
