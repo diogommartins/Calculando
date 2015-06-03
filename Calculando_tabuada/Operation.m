@@ -18,6 +18,10 @@
     return false;
 }
 
+- (BOOL) isCorrectUserAnswer{
+    return self.userAnswer == [self correctAnswer];
+}
+
 -(instancetype)initWithRandomNumbers{
     if (self = [super init])
     {

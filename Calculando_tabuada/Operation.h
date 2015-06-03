@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#define MAX_NUMBER_VALUE 9
+#define MAX_NUMBER_VALUE 10
 
-@interface Operation : NSObject <NSCopying>
+@interface Operation : NSObject
 
 @property int firstNumber;
 @property int secondNumber;
 @property int userAnswer;
 
 - (BOOL) isSameOperation: (Operation *)operation;
+- (BOOL) isCorrectUserAnswer;
 - (int) correctAnswer;
 - (instancetype)initWithRandomNumbers;
 
