@@ -19,11 +19,11 @@
 - (MultiplicationOperation *)getNewUniqueOperation{
     MultiplicationOperation * operation = [[MultiplicationOperation alloc] initWithRandomNumbers];
     
-    if([self.operations containsOperation:operation])
-        [self getNewUniqueOperation];
-    
-    [self.operations addObject:operation];
-    return operation;
+    if(![self.operations containsOperation:operation]){
+        [self.operations addObject:operation];
+        return operation;
+    }
+    return [self getNewUniqueOperation];
 }
 
 - (void)changeCurrentOperation{
@@ -33,6 +33,7 @@
 -(instancetype)init{
     if (self = [super init])
     {
+        self.operations = [NSMutableArray new];
         [self changeCurrentOperation];
     }
     return self;
