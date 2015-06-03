@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiplicationGame.h"
-#define MAX_NUMBER_TO_MULTIPLY 9
 
 @interface FirstViewController : UIViewController
 
@@ -16,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondNumber;
 @property (weak, nonatomic) IBOutlet UITextField *fieldAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperation;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblFeedback;
+@property (weak, nonatomic) IBOutlet UIView *feedbackBackground;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRefresh;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
@@ -25,7 +27,7 @@
 - (IBAction)changeOperation:(UIButton *)sender;
 - (IBAction)sendAnswer:(UIButton *)sender;
 
--(void) changeLabels;
+-(void) updateNumbersLabels;
 
 @end
 

@@ -7,8 +7,13 @@
 //
 
 #import "FirstViewController.h"
+#define GOOD_FEEDBACK @"Que foda!"
+#define BAD_FEEBACK @"Errou, burrão!"
 
 @interface FirstViewController ()
+
+- (void) clearAnswerTextField;
+- (void) displayFeedback;
 
 @end
 
@@ -17,8 +22,8 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.game = [MultiplicationGame new];
+    [self updateNumbersLabels];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,16 +35,36 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)changeLabels{
-    [self.game changeCurrentOperation];
+-(void)updateNumbersLabels{
     self.lblFirstNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation firstNumber]];
     self.lblSecondNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation secondNumber]];
 }
 
 - (IBAction)changeOperation:(UIButton *)sender {
-    [self changeLabels];
+    [self clearAnswerTextField];
+    [self.game changeCurrentOperation];
+    [self updateNumbersLabels];
+}
+
+- (void)clearAnswerTextField{
+    self.fieldAnswer.text = nil;
+}
+
+- (void)displayFeedback{
+    if (self.game.currentOperation.userAnswer && [self.game.currentOperation isCorrectUserAnswer]){
+        self.lblFeedback.text = GOOD_FEEDBACK;
+        [self.feedbackBackground setBackgroundColor: [UIColor greenColor]];
+    }
+    else{
+        self.lblFeedback.text = BAD_FEEBACK;
+        [self.feedbackBackground setBackgroundColor: [UIColor redColor]];
+    }
 }
 
 - (IBAction)sendAnswer:(UIButton *)sender {
+    [self.game.currentOperation setUserAnswer:[self.fieldAnswer.text intValue]];
+    [self clearAnswerTextField];
+    [self displayFeedback];
+    [self changeOperation: sender];
 }
 @end

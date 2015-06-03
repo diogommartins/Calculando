@@ -10,6 +10,9 @@
 
 @interface MultiplicationGame()
 
+/**
+ @todo Se não houver mais nenhuma operação única, pode gerar uma recursão infinita e o app travará
+ */
 - (MultiplicationOperation *) getNewUniqueOperation;
 
 @end
