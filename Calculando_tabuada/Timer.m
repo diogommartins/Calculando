@@ -8,12 +8,20 @@
 
 #import "Timer.h"
 
+@interface Timer()
+
+- (void) update;
+- (void) updateLabel;
+
+@end
+
 @implementation Timer
 
--(instancetype)initWithLabel:(UILabel *)label{
+-(instancetype)initWithLabel:(UILabel *)label duration:(int)seconds{
     if (self = [super init])
     {
         self.label = label;
+        self.seconds = seconds;
     }
     return self;
 }
@@ -21,17 +29,31 @@
 - (void)start{
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
                                                   target: self
-                                                selector: @selector(updateTimerLabel)
+                                                selector: @selector(update)
                                                 userInfo: nil
                                                  repeats: YES];
-}
-
--(void) updateTimerLabel{
     
+    [self updateLabel];
 }
 
+- (void) update{
+    self.seconds--;
+    [self updateLabel];
+}
+
+-(void) updateLabel{
+    [self.label setText: [NSString stringWithFormat:@"%i", self.seconds]];
+}
+
+/**!
+ @todo Acho que tinha que fazer mais alguma cois aqui...
+ */
 - (void) stop{
-    
+    [self.timer invalidate];
+}
+
+- (void)increaseTime:(int)seconds{
+    self.seconds += seconds;
 }
 
 @end

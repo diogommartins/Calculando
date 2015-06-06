@@ -13,12 +13,11 @@
 
 @property (strong, nonatomic) UILabel *label;
 @property (strong, nonatomic) NSTimer *timer;
-@property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
 
-- (instancetype) initWithLabel: (UILabel *)label;
+- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds;
 - (void) start;
-- (void) updateTimerLabel;
 - (void) stop;
+- (void) increaseTime:(int) seconds;
 
 @end
