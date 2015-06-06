@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiplicationGame.h"
+#import "Timer.h"
 
 @interface FirstViewController : UIViewController
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondNumber;
 @property (weak, nonatomic) IBOutlet UITextField *fieldAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperation;
+@property (weak, nonatomic) IBOutlet UILabel *lblTimer;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFeedback;
 @property (weak, nonatomic) IBOutlet UIView *feedbackBackground;
@@ -22,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRefresh;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 
-@property (strong, nonatomic) MultiplicationGame * game;
+@property (strong, nonatomic) Timer *timer;
+@property (strong, nonatomic) MultiplicationGame *game;
 
 - (IBAction)changeOperation:(UIButton *)sender;
 - (IBAction)sendAnswer:(UIButton *)sender;
