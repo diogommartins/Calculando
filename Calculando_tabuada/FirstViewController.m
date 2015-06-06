@@ -7,13 +7,17 @@
 //
 
 #import "FirstViewController.h"
+
 #define GOOD_FEEDBACK @"Que foda!"
 #define BAD_FEEBACK @"Errou, burrão!"
+#define DEFAULT_GAME_DURATION 120
 
 @interface FirstViewController ()
 
 - (void) clearAnswerTextField;
 - (void) displayFeedback;
+- (void) startTimer;
+- (void) updateTimerLabel;
 
 @end
 
@@ -22,6 +26,8 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.game = [MultiplicationGame new];
+    self.timer = [[Timer alloc] initWithLabel:self.lblTimer duration: DEFAULT_GAME_DURATION];
+    
     [self updateNumbersLabels];
 }
 
