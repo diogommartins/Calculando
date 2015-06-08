@@ -22,6 +22,12 @@
     return [self.userAnswer intValue] == [self correctAnswer];
 }
 
+- (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer{
+    self.userAnswer = userAnswer;
+    self.secondsLeft = [timer seconds];
+    self.timestamp = [[NSDate date] timeIntervalSince1970];
+}
+
 -(instancetype)initWithRandomNumbers{
     if (self = [super init])
     {
