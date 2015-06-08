@@ -19,7 +19,7 @@
 }
 
 - (BOOL) isCorrectUserAnswer{
-    return self.userAnswer == [self correctAnswer];
+    return [self.userAnswer intValue] == [self correctAnswer];
 }
 
 -(instancetype)initWithRandomNumbers{

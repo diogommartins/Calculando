@@ -13,7 +13,7 @@
 
 @property int firstNumber;
 @property int secondNumber;
-@property int userAnswer;
+@property NSNumber *userAnswer;
 
 - (BOOL) isSameOperation: (Operation *)operation;
 - (BOOL) isCorrectUserAnswer;

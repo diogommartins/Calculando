@@ -16,7 +16,6 @@
 
 - (void) clearAnswerTextField;
 - (void) displayFeedback;
-- (void) startTimer;
 - (void) updateTimerLabel;
 
 @end
@@ -57,6 +56,8 @@
 }
 
 - (void)displayFeedback{
+    if ([self.game.currentOperation correctAnswer] == 0)
+        NSLog(@"Resultado esperado %i", [self.game.currentOperation correctAnswer]);
     if (self.game.currentOperation.userAnswer && [self.game.currentOperation isCorrectUserAnswer]){
         self.lblFeedback.text = GOOD_FEEDBACK;
         [self.feedbackBackground setBackgroundColor: [UIColor greenColor]];
@@ -68,7 +69,7 @@
 }
 
 - (IBAction)sendAnswer:(UIButton *)sender {
-    [self.game.currentOperation setUserAnswer:[self.fieldAnswer.text intValue]];
+    [self.game.currentOperation setUserAnswer:[NSNumber numberWithInt:[self.fieldAnswer.text intValue]]];
     [self clearAnswerTextField];
     [self displayFeedback];
     [self changeOperation: sender];
