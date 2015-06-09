@@ -22,6 +22,8 @@
 
 @implementation GameViewController
 
+#pragma mark - GameViewDelegate Methods
+
 -(void)startGame{
     
 }
@@ -30,12 +32,14 @@
     NSLog(@"Fim de jogo");
 }
 
+#pragma mark - UIViewController Methods
+
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.game = [MultiplicationGame new];
     self.timer = [[Timer alloc] initWithLabel: self.lblTimer
                                      duration: DEFAULT_GAME_DURATION
-                                     callbackTarget: self];
+                               callbackTarget: self];
     [self.timer start];
     [self updateNumbersLabels];
 }
@@ -50,15 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - GameViewController
+
 -(void)updateNumbersLabels{
     self.lblFirstNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation firstNumber]];
     self.lblSecondNumber.text = [NSString stringWithFormat:@"%i", [self.game.currentOperation secondNumber]];
-}
-
-- (IBAction)changeOperation:(UIButton *)sender {
-    [self clearAnswerTextField];
-    [self.game changeCurrentOperation];
-    [self updateNumbersLabels];
 }
 
 - (void)clearAnswerTextField{
@@ -77,6 +77,14 @@
         self.lblFeedback.text = BAD_FEEBACK;
         [self.feedbackBackground setBackgroundColor: [UIColor redColor]];
     }
+}
+
+#pragma mark - IBActions
+
+- (IBAction)changeOperation:(UIButton *)sender {
+    [self clearAnswerTextField];
+    [self.game changeCurrentOperation];
+    [self updateNumbersLabels];
 }
 
 - (IBAction)sendAnswer:(UIButton *)sender {
