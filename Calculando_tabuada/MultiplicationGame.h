@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSMutableArray * operations;
 
 -(void) changeCurrentOperation;
+-(void) saveResults;
 
 @end
