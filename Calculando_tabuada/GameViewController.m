@@ -25,11 +25,15 @@
 #pragma mark - GameViewDelegate Methods
 
 -(void)startGame{
-    
+    self.game = [MultiplicationGame new];
+    self.timer = [[Timer alloc] initWithLabel: self.lblTimer
+                                     duration: DEFAULT_GAME_DURATION
+                               callbackTarget: self];
+    [self.timer start];
+    [self updateNumbersLabels];
 }
 
 -(void)endGame{
-    NSLog(@"Fim de jogo");
     [self performSegueWithIdentifier:@"showGameResults" sender:self];
 }
 
@@ -37,12 +41,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.game = [MultiplicationGame new];
-    self.timer = [[Timer alloc] initWithLabel: self.lblTimer
-                                     duration: DEFAULT_GAME_DURATION
-                               callbackTarget: self];
-    [self.timer start];
-    [self updateNumbersLabels];
+    [self startGame];
 }
 
 - (void)viewDidLoad {
@@ -67,8 +66,6 @@
 }
 
 - (void)displayFeedback{
-    if ([self.game.currentOperation correctAnswer] == 0)
-        NSLog(@"Resultado esperado %i", [self.game.currentOperation correctAnswer]);
     if (self.game.currentOperation.userAnswer && [self.game.currentOperation isCorrectUserAnswer]){
         self.lblFeedback.text = GOOD_FEEDBACK;
         [self.feedbackBackground setBackgroundColor: [UIColor greenColor]];
