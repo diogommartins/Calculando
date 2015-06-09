@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "MultiplicationOperation.h"
+#import "Game.h"
 
-@interface MultiplicationGame : NSObject
+@interface MultiplicationGame: NSObject <Game>
 
 @property (strong, nonatomic) MultiplicationOperation * currentOperation;
 @property (strong, nonatomic) NSMutableArray * operations;
+@property (nonatomic) int score;
 
--(void) changeCurrentOperation;
--(void) saveResults;
+-(MultiplicationOperation *)getNewUniqueOperation;
 
 @end
