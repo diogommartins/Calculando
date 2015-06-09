@@ -10,7 +10,7 @@
 
 #define GOOD_FEEDBACK @"Acertô mizeravi!"
 #define BAD_FEEBACK @"Errou, burrão!"
-#define DEFAULT_GAME_DURATION 120
+#define DEFAULT_GAME_DURATION 10
 #define TIME_BONUS 2
 
 @interface GameViewController ()
@@ -30,6 +30,7 @@
 
 -(void)endGame{
     NSLog(@"Fim de jogo");
+    [self performSegueWithIdentifier:@"showGameResults" sender:self];
 }
 
 #pragma mark - UIViewController Methods
