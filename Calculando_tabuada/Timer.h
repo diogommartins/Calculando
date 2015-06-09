@@ -17,7 +17,9 @@
 @property (nonatomic) int seconds;
 @property (strong, nonatomic) UIViewController <GameViewDelegate> *target;
 
-- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController *)target;
+- (instancetype) initWithLabel: (UILabel *)label
+                      duration: (int)seconds
+                callbackTarget: (UIViewController <GameViewDelegate>*)target;
 - (void) start;
 - (void) stop;
 - (void) increaseTime:(int) seconds;

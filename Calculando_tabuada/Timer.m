@@ -17,7 +17,7 @@
 
 @implementation Timer
 
-- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController *)target{
+- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController <GameViewDelegate>*)target{
     if (self = [super init])
     {
         self.label = label;
