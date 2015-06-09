@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		6618C4A91B1F655800DB255A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4A81B1F655800DB255A /* main.m */; };
 		6618C4AC1B1F655800DB255A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4AB1B1F655800DB255A /* AppDelegate.m */; };
-		6618C4AF1B1F655800DB255A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4AE1B1F655800DB255A /* FirstViewController.m */; };
+		6618C4AF1B1F655800DB255A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4AE1B1F655800DB255A /* GameViewController.m */; };
 		6618C4B21B1F655800DB255A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4B11B1F655800DB255A /* SecondViewController.m */; };
 		6618C4B51B1F655800DB255A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6618C4B31B1F655800DB255A /* Main.storyboard */; };
 		6618C4B71B1F655800DB255A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6618C4B61B1F655800DB255A /* Images.xcassets */; };
 		6618C4BA1B1F655800DB255A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6618C4B81B1F655800DB255A /* LaunchScreen.xib */; };
 		6618C4C61B1F655800DB255A /* Calculando_tabuadaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4C51B1F655800DB255A /* Calculando_tabuadaTests.m */; };
+		6651FA8A1B21483500D96F07 /* MultiplicationGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA831B21483500D96F07 /* MultiplicationGame.m */; };
+		6651FA8B1B21483500D96F07 /* MultiplicationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA851B21483500D96F07 /* MultiplicationOperation.m */; };
+		6651FA8C1B21483500D96F07 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA871B21483500D96F07 /* Operation.m */; };
+		6651FA8D1B21483500D96F07 /* SumOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA891B21483500D96F07 /* SumOperation.m */; };
+		6651FA961B2337FE00D96F07 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA951B2337FE00D96F07 /* Timer.m */; };
+		6651FA991B25373800D96F07 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA981B25373800D96F07 /* LandingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +39,8 @@
 		6618C4A81B1F655800DB255A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6618C4AA1B1F655800DB255A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6618C4AB1B1F655800DB255A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6618C4AD1B1F655800DB255A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		6618C4AE1B1F655800DB255A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		6618C4AD1B1F655800DB255A /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		6618C4AE1B1F655800DB255A /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		6618C4B01B1F655800DB255A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		6618C4B11B1F655800DB255A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		6618C4B41B1F655800DB255A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +49,19 @@
 		6618C4BF1B1F655800DB255A /* Calculando_tabuadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculando_tabuadaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6618C4C41B1F655800DB255A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6618C4C51B1F655800DB255A /* Calculando_tabuadaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calculando_tabuadaTests.m; sourceTree = "<group>"; };
+		6651FA821B21483500D96F07 /* MultiplicationGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationGame.h; sourceTree = "<group>"; };
+		6651FA831B21483500D96F07 /* MultiplicationGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationGame.m; sourceTree = "<group>"; };
+		6651FA841B21483500D96F07 /* MultiplicationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationOperation.h; sourceTree = "<group>"; };
+		6651FA851B21483500D96F07 /* MultiplicationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationOperation.m; sourceTree = "<group>"; };
+		6651FA861B21483500D96F07 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
+		6651FA871B21483500D96F07 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
+		6651FA881B21483500D96F07 /* SumOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumOperation.h; sourceTree = "<group>"; };
+		6651FA891B21483500D96F07 /* SumOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumOperation.m; sourceTree = "<group>"; };
+		6651FA941B2337FE00D96F07 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		6651FA951B2337FE00D96F07 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		6651FA971B25373800D96F07 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		6651FA981B25373800D96F07 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		6651FA9E1B266A4500D96F07 /* GameViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +103,10 @@
 		6618C4A51B1F655800DB255A /* Calculando_tabuada */ = {
 			isa = PBXGroup;
 			children = (
+				6651FA8E1B22824500D96F07 /* Models */,
 				6618C4AA1B1F655800DB255A /* AppDelegate.h */,
 				6618C4AB1B1F655800DB255A /* AppDelegate.m */,
-				6618C4AD1B1F655800DB255A /* FirstViewController.h */,
-				6618C4AE1B1F655800DB255A /* FirstViewController.m */,
-				6618C4B01B1F655800DB255A /* SecondViewController.h */,
-				6618C4B11B1F655800DB255A /* SecondViewController.m */,
+				6651FA9A1B25573100D96F07 /* Controllers */,
 				6618C4B31B1F655800DB255A /* Main.storyboard */,
 				6618C4B61B1F655800DB255A /* Images.xcassets */,
 				6618C4B81B1F655800DB255A /* LaunchScreen.xib */,
@@ -122,6 +139,45 @@
 				6618C4C41B1F655800DB255A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6651FA8E1B22824500D96F07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6651FA9E1B266A4500D96F07 /* GameViewDelegate.h */,
+				6651FA8F1B22826600D96F07 /* Operations */,
+				6651FA821B21483500D96F07 /* MultiplicationGame.h */,
+				6651FA831B21483500D96F07 /* MultiplicationGame.m */,
+				6651FA941B2337FE00D96F07 /* Timer.h */,
+				6651FA951B2337FE00D96F07 /* Timer.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6651FA8F1B22826600D96F07 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				6651FA861B21483500D96F07 /* Operation.h */,
+				6651FA871B21483500D96F07 /* Operation.m */,
+				6651FA881B21483500D96F07 /* SumOperation.h */,
+				6651FA891B21483500D96F07 /* SumOperation.m */,
+				6651FA841B21483500D96F07 /* MultiplicationOperation.h */,
+				6651FA851B21483500D96F07 /* MultiplicationOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		6651FA9A1B25573100D96F07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6651FA971B25373800D96F07 /* LandingViewController.h */,
+				6651FA981B25373800D96F07 /* LandingViewController.m */,
+				6618C4AD1B1F655800DB255A /* GameViewController.h */,
+				6618C4AE1B1F655800DB255A /* GameViewController.m */,
+				6618C4B01B1F655800DB255A /* SecondViewController.h */,
+				6618C4B11B1F655800DB255A /* SecondViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,9 +281,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6618C4B21B1F655800DB255A /* SecondViewController.m in Sources */,
+				6651FA8B1B21483500D96F07 /* MultiplicationOperation.m in Sources */,
+				6651FA8A1B21483500D96F07 /* MultiplicationGame.m in Sources */,
 				6618C4AC1B1F655800DB255A /* AppDelegate.m in Sources */,
-				6618C4AF1B1F655800DB255A /* FirstViewController.m in Sources */,
+				6618C4AF1B1F655800DB255A /* GameViewController.m in Sources */,
+				6651FA8C1B21483500D96F07 /* Operation.m in Sources */,
+				6651FA991B25373800D96F07 /* LandingViewController.m in Sources */,
+				6651FA961B2337FE00D96F07 /* Timer.m in Sources */,
 				6618C4A91B1F655800DB255A /* main.m in Sources */,
+				6651FA8D1B21483500D96F07 /* SumOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +484,7 @@
 				6618C4CB1B1F655800DB255A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6618C4CC1B1F655800DB255A /* Build configuration list for PBXNativeTarget "Calculando_tabuadaTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +493,7 @@
 				6618C4CE1B1F655800DB255A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
