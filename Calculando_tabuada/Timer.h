@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "GameViewDelegate.h"
 
 @interface Timer : NSObject
 
 @property (strong, nonatomic) UILabel *label;
 @property (strong, nonatomic) NSTimer *timer;
 @property (nonatomic) int seconds;
+@property (strong, nonatomic) UIViewController <GameViewDelegate> *target;
 
-- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds;
+- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController *)target;
 - (void) start;
 - (void) stop;
 - (void) increaseTime:(int) seconds;

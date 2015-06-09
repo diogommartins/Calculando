@@ -17,11 +17,12 @@
 
 @implementation Timer
 
--(instancetype)initWithLabel:(UILabel *)label duration:(int)seconds{
+- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController *)target{
     if (self = [super init])
     {
         self.label = label;
         self.seconds = seconds;
+        self.target = target;
     }
     return self;
 }
@@ -37,23 +38,27 @@
 }
 
 - (void) update{
-    self.seconds--;
-    [self updateLabel];
+    if (self.seconds > 0){
+        self.seconds--;
+        [self updateLabel];
+    }
+    else{
+        [self stop];
+    }
 }
 
 -(void) updateLabel{
     [self.label setText: [NSString stringWithFormat:@"%i", self.seconds]];
 }
 
-/**!
- @todo Acho que tinha que fazer mais alguma cois aqui...
- */
 - (void) stop{
     [self.timer invalidate];
+    [self.target endGame];
 }
 
 - (void)increaseTime:(int)seconds{
     self.seconds += seconds;
+    [self updateLabel];
 }
 
 @end

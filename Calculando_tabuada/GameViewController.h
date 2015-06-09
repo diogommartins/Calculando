@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiplicationGame.h"
+#import "GameViewDelegate.h"
 #import "Timer.h"
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController <GameViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFirstNumber;
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondNumber;
@@ -31,7 +32,6 @@
 - (IBAction)sendAnswer:(UIButton *)sender;
 
 -(void) updateNumbersLabels;
--(void) endGame;
 
 @end
 

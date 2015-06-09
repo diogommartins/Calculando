@@ -8,22 +8,25 @@
 
 #import "GameViewController.h"
 
-#define GOOD_FEEDBACK @"Que foda!"
+#define GOOD_FEEDBACK @"Acertô mizeravi!"
 #define BAD_FEEBACK @"Errou, burrão!"
-#define DEFAULT_GAME_DURATION 10
+#define DEFAULT_GAME_DURATION 120
 #define TIME_BONUS 2
 
 @interface GameViewController ()
 
 - (void) clearAnswerTextField;
 - (void) displayFeedback;
-- (void) updateTimerLabel;
 
 @end
 
 @implementation GameViewController
 
-- (void)endGame{
+-(void)startGame{
+    
+}
+
+-(void)endGame{
     NSLog(@"Fim de jogo");
 }
 
@@ -32,7 +35,7 @@
     self.game = [MultiplicationGame new];
     self.timer = [[Timer alloc] initWithLabel: self.lblTimer
                                      duration: DEFAULT_GAME_DURATION
-                                  endCallback: @selector(endGame)];
+                                     callbackTarget: self];
     [self.timer start];
     [self updateNumbersLabels];
 }
