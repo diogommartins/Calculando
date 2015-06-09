@@ -8,17 +8,23 @@
 
 #import "MultiplicationGame.h"
 
-@interface MultiplicationGame()
+@implementation MultiplicationGame
 
+
+-(instancetype)init{
+    if (self = [super init])
+    {
+        self.score = 0;
+        self.operations = [NSMutableArray new];
+        [self changeCurrentOperation];
+    }
+    return self;
+}
+
+#pragma mark - Game Protocol methods
 /**
  @todo Se não houver mais nenhuma operação única, pode gerar uma recursão infinita e o app travará
  */
-- (MultiplicationOperation *) getNewUniqueOperation;
-
-@end
-
-@implementation MultiplicationGame
-
 - (MultiplicationOperation *)getNewUniqueOperation{
     MultiplicationOperation * operation = [[MultiplicationOperation alloc] initWithRandomNumbers];
     
@@ -30,16 +36,18 @@
 }
 
 - (void)changeCurrentOperation{
+    self.score += [self getCurrentOperationScore];
     self.currentOperation = [self getNewUniqueOperation];
 }
 
--(instancetype)init{
-    if (self = [super init])
-    {
-        self.operations = [NSMutableArray new];
-        [self changeCurrentOperation];
+-(int)getCurrentOperationScore{
+    MultiplicationOperation * lastOperation = [self.operations lastObject];
+    if ([self.currentOperation isCorrectUserAnswer]){
+        if (([lastOperation timestamp] - [self.currentOperation timestamp]) <= TIME_DELTA_FOR_BONUS)
+            return RIGHT_ANSWER_TIME_BONUS_POINTS + RIGHT_ANSWER_DEFAULT_POINTS;
+        return RIGHT_ANSWER_DEFAULT_POINTS;
     }
-    return self;
+    return 0;
 }
 
 @end
