@@ -11,54 +11,47 @@
 @interface Timer()
 
 - (void) update;
-- (void) updateLabel;
 
 @end
 
 @implementation Timer
 
-- (instancetype) initWithLabel: (UILabel *)label duration:(int)seconds callbackTarget:(UIViewController <GameViewDelegate>*)target{
+-(instancetype)initWithDuration:(int)seconds interval:(float)interval delegate:(UIViewController<TimerDelegate> *)delegate{
     if (self = [super init])
     {
-        self.label = label;
         self.seconds = seconds;
-        self.target = target;
+        self.interval = interval;
+        self.delegate = delegate;
     }
     return self;
 }
 
 - (void)start{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: self.interval
                                                   target: self
                                                 selector: @selector(update)
                                                 userInfo: nil
                                                  repeats: YES];
-    
-    [self updateLabel];
 }
 
 - (void) update{
     if (self.seconds > 0){
         self.seconds--;
-        [self updateLabel];
+        [self.delegate timerDidUpdate];
     }
     else{
         [self stop];
     }
 }
 
--(void) updateLabel{
-    [self.label setText: [NSString stringWithFormat:@"%i", self.seconds]];
-}
-
 - (void) stop{
     [self.timer invalidate];
-    [self.target endGame];
+    [self.delegate timerDidEnd];
 }
 
 - (void)increaseTime:(int)seconds{
     self.seconds += seconds;
-    [self updateLabel];
+    [self.delegate timerDidUpdate];
 }
 
 @end

@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiplicationGame.h"
-#import "GameViewDelegate.h"
 #import "Timer.h"
 
-@interface GameViewController : UIViewController <GameViewDelegate>
+@interface GameViewController : UIViewController <TimerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFirstNumber;
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondNumber;

@@ -22,18 +22,22 @@
 
 @implementation GameViewController
 
-#pragma mark - GameViewDelegate Methods
+
 
 -(void)startGame{
     self.game = [MultiplicationGame new];
-    self.timer = [[Timer alloc] initWithLabel: self.lblTimer
-                                     duration: DEFAULT_GAME_DURATION
-                               callbackTarget: self];
+    self.timer = [[Timer alloc] initWithDuration:DEFAULT_GAME_DURATION interval:1.0 delegate:self];
     [self.timer start];
     [self updateNumbersLabels];
 }
 
--(void)endGame{
+#pragma mark - TimerDelegate Methods
+
+-(void)timerDidUpdate{
+    [self.lblTimer setText: [NSString stringWithFormat:@"%i", [self.timer seconds]]];
+}
+
+-(void)timerDidEnd{
     [self performSegueWithIdentifier:@"showGameResults" sender:self];
 }
 
