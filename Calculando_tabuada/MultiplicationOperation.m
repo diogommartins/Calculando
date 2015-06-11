@@ -14,4 +14,8 @@
     return self.firstNumber * self.secondNumber;
 }
 
+-(NSString *)toString
+{
+    return [NSString stringWithFormat:@"%i x %i", self.firstNumber, self.secondNumber];
+}
 @end

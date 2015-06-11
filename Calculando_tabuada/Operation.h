@@ -23,6 +23,7 @@
 - (int) correctAnswer;
 - (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer;
 - (instancetype)initWithRandomNumbers;
+- (NSString *) toString;
 
 @end
 
