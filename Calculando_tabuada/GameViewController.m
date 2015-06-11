@@ -7,11 +7,11 @@
 //
 
 #import "GameViewController.h"
-#import "RelatorioTableViewController.h"
+#import "RelatorioViewController.h"
 
 #define GOOD_FEEDBACK @"Acertô mizeravi!"
 #define BAD_FEEBACK @"Errou, burrão!"
-#define DEFAULT_GAME_DURATION 10
+#define DEFAULT_GAME_DURATION 5
 #define TIME_BONUS 2
 
 @interface GameViewController ()
@@ -82,6 +82,14 @@
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showGameResults"]){
+        RelatorioViewController * destinationViewController = [segue destinationViewController];
+        [destinationViewController setGame: self.game];
+    }
+}
+
 #pragma mark - IBActions
 
 - (IBAction)changeOperation:(UIButton *)sender {
@@ -99,12 +107,6 @@
     [self changeOperation: sender];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showGameResults"]){
-        RelatorioTableViewController * destinationViewController = [segue destinationViewController];
-        [destinationViewController setGame: self.game];
-    }
-}
+
 
 @end
