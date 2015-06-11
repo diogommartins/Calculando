@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "RelatorioTableViewController.h"
 
 #define GOOD_FEEDBACK @"Acertô mizeravi!"
 #define BAD_FEEBACK @"Errou, burrão!"
@@ -89,12 +90,21 @@
     [self updateNumbersLabels];
 }
 
-- (IBAction)sendAnswer:(UIButton *)sender {
+- (IBAction)sendAnswer:(UIButton *)sender
+{
     [self.game.currentOperation setUserAnswer: [NSNumber numberWithInt:[self.fieldAnswer.text intValue]]
                                         timer: self.timer];
     [self clearAnswerTextField];
     [self displayFeedback];
     [self changeOperation: sender];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showGameResults"]){
+        RelatorioTableViewController * destinationViewController = [segue destinationViewController];
+        [destinationViewController setGame: self.game];
+    }
 }
 
 @end
