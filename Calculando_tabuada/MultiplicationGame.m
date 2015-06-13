@@ -8,15 +8,29 @@
 
 #import "MultiplicationGame.h"
 
+@interface MultiplicationGame()
+
+-(void) updateScore;
+
+@end
+
 @implementation MultiplicationGame
 
-
--(instancetype)init{
+-(instancetype)init
+{
     if (self = [super init])
     {
         self.score = 0;
         self.operations = [NSMutableArray new];
         [self changeCurrentOperation];
+    }
+    return self;
+}
+
+-(instancetype)initWithDelegate:(id<GameDelegate>)delegate
+{
+    if (self = [self init]){
+        self.delegate = delegate;
     }
     return self;
 }
@@ -36,8 +50,17 @@
 }
 
 - (void)changeCurrentOperation{
-    self.score += [self getCurrentOperationScore];
+    [self updateScore];
     self.currentOperation = [self getNewUniqueOperation];
+}
+
+-(void) updateScore
+{
+    int currentOperationScore = [self getCurrentOperationScore];
+    if (currentOperationScore){
+        self.score += currentOperationScore;
+        [self.delegate scoreDidChangeWithPoints: currentOperationScore];
+    }
 }
 
 -(int)getCurrentOperationScore{

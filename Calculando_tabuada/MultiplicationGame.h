@@ -15,7 +15,10 @@
 @property (strong, nonatomic) MultiplicationOperation * currentOperation;
 @property (strong, nonatomic) NSMutableArray * operations;
 @property (nonatomic) int score;
+@property (strong, nonatomic) id <GameDelegate> delegate;
 
 -(MultiplicationOperation *)getNewUniqueOperation;
+
+-(instancetype) initWithDelegate: (id <GameDelegate>)delegate;
 
 @end

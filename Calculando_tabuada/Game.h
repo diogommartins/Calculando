@@ -13,6 +13,13 @@
 #define RIGHT_ANSWER_DEFAULT_POINTS     10
 #define RIGHT_ANSWER_TIME_BONUS_POINTS  10
 
+@protocol GameDelegate <NSObject>
+
+@optional
+- (void) scoreDidChangeWithPoints: (int)points;
+
+@end
+
 @protocol Game <NSObject>
 
 @required
