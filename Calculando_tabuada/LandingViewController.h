@@ -10,6 +10,7 @@
 
 @interface LandingViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UIButton *btnNewGame;
 
 - (IBAction)touchedStartNewGameButton:(UIButton *)sender;
