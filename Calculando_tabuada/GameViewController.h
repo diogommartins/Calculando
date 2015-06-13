@@ -10,13 +10,14 @@
 #import "MultiplicationGame.h"
 #import "Timer.h"
 
-@interface GameViewController : UIViewController <TimerDelegate>
+@interface GameViewController : UIViewController <TimerDelegate, GameDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFirstNumber;
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondNumber;
 @property (weak, nonatomic) IBOutlet UITextField *fieldAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperation;
 @property (weak, nonatomic) IBOutlet UILabel *lblTimer;
+@property (weak, nonatomic) IBOutlet UILabel *lblScore;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFeedback;
 @property (weak, nonatomic) IBOutlet UIView *feedbackBackground;
