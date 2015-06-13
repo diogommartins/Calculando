@@ -23,10 +23,8 @@
 
 @implementation GameViewController
 
-
-
 -(void)startGame{
-    self.game = [MultiplicationGame new];
+    self.game = [[MultiplicationGame alloc] initWithDelegate: self];
     self.timer = [[Timer alloc] initWithDuration:DEFAULT_GAME_DURATION interval:1.0 delegate:self];
     [self.timer start];
     [self updateNumbersLabels];
@@ -40,6 +38,12 @@
 
 -(void)timerDidEnd{
     [self performSegueWithIdentifier:@"showGameResults" sender:self];
+}
+
+#pragma mark - GameViewDelegate Methods
+
+-(void)scoreDidChangeWithPoints: (int)points{
+    [self.lblScore setText: [NSString stringWithFormat:@"%i", self.game.score]];
 }
 
 #pragma mark - UIViewController Methods
