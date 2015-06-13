@@ -48,14 +48,9 @@
 
 #pragma mark - UIViewController Methods
 
--(void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self startGame];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self startGame];
 }
 
 - (void)didReceiveMemoryWarning {
