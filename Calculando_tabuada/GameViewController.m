@@ -58,6 +58,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITextFieldDelegate methods
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(UITextFieldTextDidChange:)
+                                                 name: UITextFieldTextDidChangeNotification
+                                               object: textField];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: UITextFieldTextDidChangeNotification
+                                                  object: textField];
+}
+
+- (void) UITextFieldTextDidChange:(NSNotification*)notification
+{
+    UITextField * textfield = (UITextField*)notification.object;
+    int currentNumber = [textfield.text intValue];
+    if ([self.game.currentOperation correctAnswer] == currentNumber)
+        [self sendAnswer: nil];
+}
+
 #pragma mark - GameViewController
 
 -(void)updateNumbersLabels{
