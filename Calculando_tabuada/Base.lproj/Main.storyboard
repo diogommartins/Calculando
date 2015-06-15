@@ -299,15 +299,6 @@
                                     <action selector="changeOperation:" destination="9pv-A4-QxB" eventType="touchDown" id="Tih-oh-NEf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-8k-bYg">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="337" width="288" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -375,7 +366,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="dtp-aH-vUH"/>
-                                <exclude reference="3GK-8k-bYg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="RHl-sf-uig"/>
@@ -414,7 +404,6 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dtp-aH-vUH"/>
-                                <include reference="3GK-8k-bYg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6kJ-TH-jWJ"/>
@@ -493,7 +482,6 @@
                         <outlet property="lblScore" destination="dtp-aH-vUH" id="N7F-iI-Lhe"/>
                         <outlet property="lblSecondNumber" destination="wgc-Iq-u5s" id="of0-Tl-FDr"/>
                         <outlet property="lblTimer" destination="f9p-Ur-afa" id="DEP-ej-V9c"/>
-                        <outlet property="lblTosco" destination="3GK-8k-bYg" id="GUG-7M-YMc"/>
                         <segue destination="Fwm-li-Ic8" kind="show" identifier="showGameResults" id="Mzl-fo-xb2"/>
                     </connections>
                 </viewController>

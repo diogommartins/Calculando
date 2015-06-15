@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblOperation;
 @property (weak, nonatomic) IBOutlet UILabel *lblTimer;
 @property (weak, nonatomic) IBOutlet UILabel *lblScore;
-@property (weak, nonatomic) IBOutlet UILabel *lblTosco;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFeedback;
 @property (weak, nonatomic) IBOutlet UIView *feedbackBackground;
