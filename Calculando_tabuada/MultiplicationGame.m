@@ -43,7 +43,6 @@
     MultiplicationOperation * operation = [[MultiplicationOperation alloc] initWithRandomNumbers];
     
     if(![self.operations containsOperation:operation]){
-        [self.operations addObject:operation];
         return operation;
     }
     return [self getNewUniqueOperation];
@@ -51,6 +50,8 @@
 
 - (void)changeCurrentOperation{
     [self updateScore];
+    if (self.currentOperation && self.currentOperation.userAnswer)
+        [self.operations addObject:self.currentOperation];
     self.currentOperation = [self getNewUniqueOperation];
 }
 
