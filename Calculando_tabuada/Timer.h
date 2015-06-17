@@ -26,7 +26,7 @@
 
 - (instancetype) initWithDuration: (int)seconds
                          interval: (float)interval
-                   delegate: (UIViewController <TimerDelegate>*)delegate;
+                         delegate: (UIViewController <TimerDelegate>*)delegate;
 - (void) start;
 - (void) stop;
 - (void) increaseTime:(int) seconds;
