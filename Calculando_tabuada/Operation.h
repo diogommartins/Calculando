@@ -20,6 +20,7 @@
 
 - (BOOL) isSameOperation: (Operation *)operation;
 - (BOOL) isCorrectUserAnswer;
+- (BOOL) isCorrectAnswer: (int)answer;
 - (int) correctAnswer;
 - (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer;
 - (instancetype)initWithRandomNumbers;

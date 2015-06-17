@@ -79,7 +79,7 @@
 {
     UITextField * textfield = (UITextField*)notification.object;
     int currentNumber = [textfield.text intValue];
-    if ([self.game.currentOperation correctAnswer] == currentNumber)
+    if ([self.game.currentOperation isCorrectAnswer: currentNumber])
         [self sendAnswer: nil];
 }
 

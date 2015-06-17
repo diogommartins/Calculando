@@ -22,6 +22,11 @@
     return [self.userAnswer intValue] == [self correctAnswer];
 }
 
+-(BOOL)isCorrectAnswer:(int)answer
+{
+    return [self correctAnswer] == answer;
+}
+
 - (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer{
     self.userAnswer = userAnswer;
     self.secondsLeft = [timer seconds];
