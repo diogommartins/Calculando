@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DMLeaderboard.h"
 
-@interface LeaderboardViewController : UIViewController
+@interface LeaderboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DMLeaderboardDelegate>
 
 @property (strong, nonatomic) DMLeaderboard *leaderboard;
 

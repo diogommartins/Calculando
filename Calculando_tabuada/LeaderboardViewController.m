@@ -9,20 +9,44 @@
 #import "LeaderboardViewController.h"
 
 @interface LeaderboardViewController ()
+@property (weak, nonatomic) IBOutlet UITabBarItem *lblTabBarItem;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation LeaderboardViewController
 
-- (void)viewDidLoad {
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewDidLoad];
-    self.leaderboard = [[DMLeaderboard alloc] init];
-
+    
+    self.leaderboard = [[DMLeaderboard alloc] initWithPositions: 10];
+    [self.leaderboard setDelegate: self];
+    [self.leaderboard update];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.leaderboard.positions;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"leaderboardCell" forIndexPath: indexPath];
+    DMScore * score = [self.leaderboard.topScores objectAtIndex: indexPath.row];
+    [cell.textLabel setText: score.username];
+    [cell.detailTextLabel setText: [NSString stringWithFormat: @"%@ pontos", score.points]];
+    return cell;
+}
+
+#pragma mark - DMLeaderboardDelegate
+-(void)leaderboardDidFinishUpdate
+{
+    [self.tableView reloadData];
 }
 
 /*
