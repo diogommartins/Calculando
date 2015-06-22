@@ -38,6 +38,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchedStartNewGameButton:" destination="HTo-X5-FKV" eventType="touchUpInside" id="Pux-Hi-Tpu"/>
                                             <segue destination="9pv-A4-QxB" kind="show" identifier="startGame" id="QB9-58-KfZ"/>
                                         </connections>
                                     </button>

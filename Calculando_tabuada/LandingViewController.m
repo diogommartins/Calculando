@@ -15,6 +15,7 @@
 -(void)applyBlurToBackground;
 -(void)saveUsername;
 -(void)setUsernameLabelPlaceholderFromDefaults;
+- (IBAction)touchedStartNewGameButton:(UIButton *)sender;
 
 @end
 
@@ -44,6 +45,11 @@
         [self.lblUsername setPlaceholder: [NSString stringWithFormat:@"Usuário: %@", username]];
 }
 
+- (IBAction)touchedStartNewGameButton:(UIButton *)sender
+{
+    [self saveUsername];
+}
+
 -(void)saveUsername
 {
     NSString * username = self.lblUsername.text;
@@ -52,11 +58,6 @@
         [defaults setObject:username forKey:@"username"];
         [defaults synchronize];
     }
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [self saveUsername];
 }
 
 @end
