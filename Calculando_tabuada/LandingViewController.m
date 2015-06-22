@@ -8,13 +8,13 @@
 
 #import "LandingViewController.h"
 #import "UIImage+ImageEffects.h"
-#import "DMLeaderboard.h"
 
 @interface LandingViewController()
 
 -(void)applyBlurToBackground;
 -(void)saveUsername;
 -(void)setUsernameLabelPlaceholderFromDefaults;
+
 - (IBAction)touchedStartNewGameButton:(UIButton *)sender;
 
 @end
