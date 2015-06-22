@@ -9,7 +9,7 @@
 #import "LeaderboardViewController.h"
 
 @interface LeaderboardViewController ()
-@property (weak, nonatomic) IBOutlet UITabBarItem *lblTabBarItem;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

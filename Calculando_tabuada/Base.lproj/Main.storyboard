@@ -952,8 +952,6 @@
                     <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="cPa-gy-q4n"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="lblTabBarItem" destination="cPa-gy-q4n" id="0FK-Dw-qNs"/>
-                        <outlet property="tabBarItem" destination="cPa-gy-q4n" id="6mX-j6-w4N"/>
                         <outlet property="tableView" destination="gHA-Zm-IyL" id="dM0-4D-b0b"/>
                     </connections>
                 </viewController>
