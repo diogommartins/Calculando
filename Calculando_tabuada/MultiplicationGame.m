@@ -60,7 +60,8 @@
     int currentOperationScore = [self getCurrentOperationScore];
     if (currentOperationScore){
         self.score += currentOperationScore;
-        [self.delegate scoreDidChangeWithPoints: currentOperationScore];
+        if (self.delegate)
+            [self.delegate scoreDidChangeWithPoints: currentOperationScore];
     }
 }
 
