@@ -131,7 +131,7 @@
 - (void)sendAnswer
 {
     [self.game.currentOperation setUserAnswer: [NSNumber numberWithInt:[self.fieldAnswer.text intValue]]
-                                        timer: self.timer];
+                                  secondsLeft: self.timer.seconds];
     [self clearAnswerTextField];
     [self displayFeedback];
     [self changeOperation: nil];

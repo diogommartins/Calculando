@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Timer.h"
 #define MAX_NUMBER_VALUE 10
 
 @interface Operation : NSObject
@@ -22,7 +21,7 @@
 - (BOOL) isCorrectUserAnswer;
 - (BOOL) isCorrectAnswer: (int)answer;
 - (int) correctAnswer;
-- (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer;
+- (void) setUserAnswer:(NSNumber *)userAnswer secondsLeft:(int)seconds;
 - (instancetype)initWithRandomNumbers;
 - (NSString *) toString;
 

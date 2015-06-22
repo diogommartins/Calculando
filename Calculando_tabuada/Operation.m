@@ -27,9 +27,9 @@
     return [self correctAnswer] == answer;
 }
 
-- (void) setUserAnswer:(NSNumber *)userAnswer timer:(Timer *)timer{
+- (void) setUserAnswer:(NSNumber *)userAnswer secondsLeft:(int)seconds{
     self.userAnswer = userAnswer;
-    self.secondsLeft = [timer seconds];
+    self.secondsLeft = seconds;
     self.timestamp = [[NSDate date] timeIntervalSince1970];
 }
 
