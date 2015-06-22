@@ -27,10 +27,11 @@
     return self;
 }
 
--(instancetype)initWithDelegate:(id<GameDelegate>)delegate
+-(instancetype) initWithDelegate: (id <GameDelegate>)delegate username:(NSString *)username
 {
     if (self = [self init]){
         self.delegate = delegate;
+        self.username = username;
     }
     return self;
 }
