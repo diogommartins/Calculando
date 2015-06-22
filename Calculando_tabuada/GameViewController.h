@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MultiplicationGame.h"
 #import "Timer.h"
+#import "DMLeaderboard.h"
 
 @interface GameViewController : UIViewController <TimerDelegate, GameDelegate, UITextFieldDelegate>
 
@@ -26,6 +27,7 @@
 
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) MultiplicationGame *game;
+@property (strong, nonatomic) DMLeaderboard * leaderboard;
 
 - (IBAction)changeOperation:(UIButton *)sender;
 - (void)sendAnswer;

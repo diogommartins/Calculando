@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
+@interface DMScore : NSObject
+
+@property (strong, nonatomic) NSNumber * score;
+@property (strong, nonatomic) NSString * username;
+@property (strong, nonatomic) NSString * timestamp;
+
+-(instancetype) initWithScore: (NSNumber *)score user:(NSString *)user;
+-(instancetype) initWithAPIResultDictionary: (NSDictionary *)result;
+-(NSDictionary *)toDict;
+
+@end
+
 @interface DMLeaderboard : NSObject
 
 @property int positions;
@@ -17,5 +29,6 @@
 
 -(instancetype)initWithPositions: (int)positions;
 -(void) update;
+-(void) saveScore: (DMScore *)score;
 
 @end

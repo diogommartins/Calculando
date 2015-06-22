@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EB3721DD8BE7C297CE717E8 /* libPods-Calculando_tabuada.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F48866AF27F3BE5E9076D5F /* libPods-Calculando_tabuada.a */; };
 		6618C4A91B1F655800DB255A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4A81B1F655800DB255A /* main.m */; };
 		6618C4AC1B1F655800DB255A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4AB1B1F655800DB255A /* AppDelegate.m */; };
 		6618C4AF1B1F655800DB255A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6618C4AE1B1F655800DB255A /* GameViewController.m */; };
@@ -22,6 +23,11 @@
 		6651FA8D1B21483500D96F07 /* SumOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA891B21483500D96F07 /* SumOperation.m */; };
 		6651FA961B2337FE00D96F07 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA951B2337FE00D96F07 /* Timer.m */; };
 		6651FA991B25373800D96F07 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6651FA981B25373800D96F07 /* LandingViewController.m */; };
+		668CA7091B30CA390017A10B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 668CA7071B30CA390017A10B /* UIImage+ImageEffects.m */; };
+		668CA70A1B30CA390017A10B /* UIImage+ImageEffects.h in Sources */ = {isa = PBXBuildFile; fileRef = 668CA7081B30CA390017A10B /* UIImage+ImageEffects.h */; };
+		668D6FB91B35091800E3B628 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668D6FB81B35091800E3B628 /* LeaderboardViewController.m */; };
+		668D6FBD1B35125800E3B628 /* DMLeaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 668D6FBC1B35125800E3B628 /* DMLeaderboard.m */; };
+		66C72F851B38447E008B109B /* Game.h in Sources */ = {isa = PBXBuildFile; fileRef = 66C72F841B38447E008B109B /* Game.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03449EAB84693A2CFF861822 /* Pods-Calculando_tabuada.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculando_tabuada.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calculando_tabuada/Pods-Calculando_tabuada.debug.xcconfig"; sourceTree = "<group>"; };
+		3F48866AF27F3BE5E9076D5F /* libPods-Calculando_tabuada.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calculando_tabuada.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6618C4A31B1F655800DB255A /* Calculando_tabuada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculando_tabuada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6618C4A71B1F655800DB255A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6618C4A81B1F655800DB255A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +73,14 @@
 		6651FA971B25373800D96F07 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		6651FA981B25373800D96F07 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		6651FA9E1B266A4500D96F07 /* GameViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewDelegate.h; sourceTree = "<group>"; };
+		668CA7071B30CA390017A10B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		668CA7081B30CA390017A10B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		668D6FB71B35091800E3B628 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		668D6FB81B35091800E3B628 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		668D6FBB1B35125800E3B628 /* DMLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaderboard.h; sourceTree = "<group>"; };
+		668D6FBC1B35125800E3B628 /* DMLeaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaderboard.m; sourceTree = "<group>"; };
+		66C72F841B38447E008B109B /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		9149A45E583749923E6EBBB9 /* Pods-Calculando_tabuada.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculando_tabuada.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculando_tabuada/Pods-Calculando_tabuada.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB3721DD8BE7C297CE717E8 /* libPods-Calculando_tabuada.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +108,8 @@
 				6618C4A51B1F655800DB255A /* Calculando_tabuada */,
 				6618C4C21B1F655800DB255A /* Calculando_tabuadaTests */,
 				6618C4A41B1F655800DB255A /* Products */,
+				A4958F78C67EA12251BE4C8D /* Pods */,
+				9F5F22FC25D2227DCFF77F61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,12 +166,15 @@
 		6651FA8E1B22824500D96F07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				668D6FBA1B35122700E3B628 /* Categories */,
+				66C72F841B38447E008B109B /* Game.h */,
 				6651FA9E1B266A4500D96F07 /* GameViewDelegate.h */,
 				6651FA8F1B22826600D96F07 /* Operations */,
 				6651FA821B21483500D96F07 /* MultiplicationGame.h */,
 				6651FA831B21483500D96F07 /* MultiplicationGame.m */,
 				6651FA941B2337FE00D96F07 /* Timer.h */,
 				6651FA951B2337FE00D96F07 /* Timer.m */,
+				668D6FBE1B35126700E3B628 /* Leaderboard */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -181,8 +203,45 @@
 				6618C4B11B1F655800DB255A /* SecondViewController.m */,
 				664CFFE61B29F989005FD295 /* RelatorioViewController.h */,
 				664CFFE71B29F989005FD295 /* RelatorioViewController.m */,
+				668D6FB71B35091800E3B628 /* LeaderboardViewController.h */,
+				668D6FB81B35091800E3B628 /* LeaderboardViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		668D6FBA1B35122700E3B628 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				668CA7071B30CA390017A10B /* UIImage+ImageEffects.m */,
+				668CA7081B30CA390017A10B /* UIImage+ImageEffects.h */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		668D6FBE1B35126700E3B628 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				668D6FBB1B35125800E3B628 /* DMLeaderboard.h */,
+				668D6FBC1B35125800E3B628 /* DMLeaderboard.m */,
+			);
+			name = Leaderboard;
+			sourceTree = "<group>";
+		};
+		9F5F22FC25D2227DCFF77F61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F48866AF27F3BE5E9076D5F /* libPods-Calculando_tabuada.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4958F78C67EA12251BE4C8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03449EAB84693A2CFF861822 /* Pods-Calculando_tabuada.debug.xcconfig */,
+				9149A45E583749923E6EBBB9 /* Pods-Calculando_tabuada.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6618C4C91B1F655800DB255A /* Build configuration list for PBXNativeTarget "Calculando_tabuada" */;
 			buildPhases = (
+				AA0FB1E8A1B9EC85DDB67BCA /* Check Pods Manifest.lock */,
 				6618C49F1B1F655800DB255A /* Sources */,
 				6618C4A01B1F655800DB255A /* Frameworks */,
 				6618C4A11B1F655800DB255A /* Resources */,
+				36A55F127843054537318C94 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +295,12 @@
 				TargetAttributes = {
 					6618C4A21B1F655800DB255A = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7UNP6GY9YT;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+						};
 					};
 					6618C4BE1B1F655800DB255A = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -280,22 +347,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36A55F127843054537318C94 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Calculando_tabuada/Pods-Calculando_tabuada-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA0FB1E8A1B9EC85DDB67BCA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6618C49F1B1F655800DB255A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C72F851B38447E008B109B /* Game.h in Sources */,
+				668CA7091B30CA390017A10B /* UIImage+ImageEffects.m in Sources */,
+				668CA70A1B30CA390017A10B /* UIImage+ImageEffects.h in Sources */,
 				664CFFE81B29F989005FD295 /* RelatorioViewController.m in Sources */,
 				6618C4B21B1F655800DB255A /* SecondViewController.m in Sources */,
 				6651FA8B1B21483500D96F07 /* MultiplicationOperation.m in Sources */,
 				6651FA8A1B21483500D96F07 /* MultiplicationGame.m in Sources */,
 				6618C4AC1B1F655800DB255A /* AppDelegate.m in Sources */,
 				6618C4AF1B1F655800DB255A /* GameViewController.m in Sources */,
+				668D6FB91B35091800E3B628 /* LeaderboardViewController.m in Sources */,
 				6651FA8C1B21483500D96F07 /* Operation.m in Sources */,
 				6651FA991B25373800D96F07 /* LandingViewController.m in Sources */,
 				6651FA961B2337FE00D96F07 /* Timer.m in Sources */,
 				6618C4A91B1F655800DB255A /* main.m in Sources */,
 				6651FA8D1B21483500D96F07 /* SumOperation.m in Sources */,
+				668D6FBD1B35125800E3B628 /* DMLeaderboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,23 +524,31 @@
 		};
 		6618C4CA1B1F655800DB255A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03449EAB84693A2CFF861822 /* Pods-Calculando_tabuada.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculando_tabuada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		6618C4CB1B1F655800DB255A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9149A45E583749923E6EBBB9 /* Pods-Calculando_tabuada.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculando_tabuada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

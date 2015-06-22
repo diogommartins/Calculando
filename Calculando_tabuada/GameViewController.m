@@ -24,7 +24,9 @@
 @implementation GameViewController
 
 -(void)startGame{
-    self.game = [[MultiplicationGame alloc] initWithDelegate: self];
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    self.game = [[MultiplicationGame alloc] initWithDelegate: self
+                                                    username: [defaults objectForKey: @"username"]];
     self.timer = [[Timer alloc] initWithDuration:DEFAULT_GAME_DURATION interval:1.0 delegate:self];
     [self.timer start];
     [self updateNumbersLabels];
@@ -37,6 +39,10 @@
 }
 
 -(void)timerDidEnd{
+    self.leaderboard = [[DMLeaderboard alloc] initWithPositions: 10];
+    [self.leaderboard saveScore: [[DMScore alloc] initWithScore: [NSNumber numberWithInt: self.game.score]
+                                                           user: self.game.username]];
+
     [self performSegueWithIdentifier:@"showGameResults" sender:self];
 }
 
@@ -80,7 +86,7 @@
     UITextField * textfield = (UITextField*)notification.object;
     int currentNumber = [textfield.text intValue];
     if ([self.game.currentOperation isCorrectAnswer: currentNumber])
-        [self sendAnswer: nil];
+        [self sendAnswer];
 }
 
 #pragma mark - GameViewController
@@ -122,13 +128,13 @@
     [self updateNumbersLabels];
 }
 
-- (IBAction)sendAnswer:(UIButton *)sender
+- (void)sendAnswer
 {
     [self.game.currentOperation setUserAnswer: [NSNumber numberWithInt:[self.fieldAnswer.text intValue]]
                                         timer: self.timer];
     [self clearAnswerTextField];
     [self displayFeedback];
-    [self changeOperation: sender];
+    [self changeOperation: nil];
 }
 
 

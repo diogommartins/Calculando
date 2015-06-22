@@ -21,6 +21,4 @@
 
 @property (strong, nonatomic) MultiplicationGame *game;
 
-
-
 @end
