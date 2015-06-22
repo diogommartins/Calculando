@@ -15,7 +15,7 @@
     if (self = [super init])
     {
         self.username = [result objectForKey: @"username"];
-        self.score = [result objectForKey: @"points"];
+        self.points = [result objectForKey: @"points"];
         self.timestamp = [result objectForKey: @"submit_timestamp"];
     }
     return self;
@@ -25,7 +25,7 @@
 {
     if (self = [super init])
     {
-        self.score = score;
+        self.points = score;
         self.username = user;
     }
     return self;
@@ -33,7 +33,7 @@
 
 -(NSDictionary *)toDict
 {
-    return @{ @"username": self.username, @"points": self.score };
+    return @{ @"username": self.username, @"points": self.points };
 }
 
 @end
@@ -61,7 +61,8 @@
                          [leaderboard addObject: [[DMScore alloc] initWithAPIResultDictionary: score]];
                      
                      self.topScores = [NSArray arrayWithArray: leaderboard];
-                     
+                     if (self.delegate)
+                         [self.delegate leaderboardDidFinishUpdate];
                  }
                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                      self.topScores = [NSArray new];
@@ -76,6 +77,8 @@
                       int position = [responseObject[@"position"] intValue];
                       if (position <= self.positions)
                           [self update];    // Só vale a pena atualizar quando a posição fizer diferença na leaderboard
+                      if (self.delegate)
+                          [self.delegate leaderboardDidFinishUpdate];
                   }
                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                       NSLog(@"puts...");

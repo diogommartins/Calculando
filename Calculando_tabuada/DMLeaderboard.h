@@ -9,9 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
+@protocol DMLeaderboardDelegate <NSObject>
+
+@optional
+-(void)leaderboardDidFinishSaveScore;
+-(void)leaderboardDidFinishUpdate;
+
+@end
+
 @interface DMScore : NSObject
 
-@property (strong, nonatomic) NSNumber * score;
+@property (strong, nonatomic) NSNumber * points;
 @property (strong, nonatomic) NSString * username;
 @property (strong, nonatomic) NSString * timestamp;
 
@@ -26,9 +34,10 @@
 @property int positions;
 @property (strong, nonatomic) NSArray * topScores;
 @property (strong, nonatomic) AFHTTPRequestOperationManager * apiManager;
+@property (strong, nonatomic) id <DMLeaderboardDelegate> delegate;
 
 -(instancetype)initWithPositions: (int)positions;
--(void) update;
+-(void) update ;
 -(void) saveScore: (DMScore *)score;
 
 @end
