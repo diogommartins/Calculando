@@ -22,11 +22,11 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (nonatomic) int seconds;
 @property (nonatomic) float interval;
-@property (strong, nonatomic) UIViewController <TimerDelegate> *delegate;
+@property (strong, nonatomic) id <TimerDelegate> delegate;
 
 - (instancetype) initWithDuration: (int)seconds
                          interval: (float)interval
-                         delegate: (UIViewController <TimerDelegate>*)delegate;
+                         delegate: (id <TimerDelegate>)delegate;
 - (void) start;
 - (void) stop;
 - (void) increaseTime:(int) seconds;

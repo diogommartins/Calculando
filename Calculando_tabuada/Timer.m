@@ -16,7 +16,7 @@
 
 @implementation Timer
 
--(instancetype)initWithDuration:(int)seconds interval:(float)interval delegate:(UIViewController<TimerDelegate> *)delegate{
+-(instancetype)initWithDuration:(int)seconds interval:(float)interval delegate:(id <TimerDelegate>)delegate{
     if (self = [super init])
     {
         self.seconds = seconds;
