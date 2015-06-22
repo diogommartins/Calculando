@@ -24,6 +24,7 @@
 
 @required
 
+@property (strong, nonatomic) NSString * username;
 @property (strong, nonatomic) Operation * currentOperation;
 @property (strong, nonatomic) NSMutableArray * operations;
 @property (nonatomic) int score;
