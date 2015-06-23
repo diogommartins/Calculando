@@ -15,6 +15,8 @@
 @property (strong, nonatomic) Operation * operationA;
 @property (strong, nonatomic) Operation * operationB;
 @property (strong, nonatomic) Operation * randomOperation;
+@property (strong, nonatomic) Operation * nilOperation;
+@property (strong, nonatomic) Operation * operationWithoutOperands;
 
 - (void)testIsSameOperationWithEqualOperationsTest;
 - (void)testIsSameOperationWithDifferentOperations;
@@ -31,7 +33,9 @@
                                             secondNumber: arc4random_uniform(MAX_NUMBER_VALUE)];
     self.operationB = [[Operation alloc] initWithNumbers: arc4random_uniform(MAX_NUMBER_VALUE)
                                             secondNumber: arc4random_uniform(MAX_NUMBER_VALUE)];
+    
     self.randomOperation = [[Operation alloc] initWithRandomNumbers];
+    self.operationWithoutOperands = [Operation new];
 }
 
 - (void)tearDown
@@ -46,6 +50,7 @@
     XCTAssertFalse([self.operationB isSameOperation: self.operationA]);
     XCTAssertFalse([self.operationA isSameOperation: self.operationB]);
     XCTAssertFalse([self.randomOperation isSameOperation: [Operation new]]);
+    XCTAssertFalse([self.operationWithoutOperands isSameOperation: nil]);
 }
 
 - (void)testIsSameOperationWithEqualOperationsTest
@@ -53,6 +58,8 @@
     XCTAssertTrue([self.randomOperation isSameOperation: self.randomOperation]);
     XCTAssertTrue([self.operationA isSameOperation: self.operationA]);
     XCTAssertTrue([self.operationB isSameOperation: self.operationB]);
+    XCTAssertTrue([self.operationWithoutOperands isSameOperation: self.operationWithoutOperands]);
+    XCTAssertTrue([self.operationWithoutOperands isSameOperation: [Operation new]]);
 }
 
 #pragma mark - NSMutableArray+OperationMutableArray
