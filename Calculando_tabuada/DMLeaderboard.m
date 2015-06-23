@@ -90,7 +90,7 @@
                           [self.delegate leaderboardDidFinishUpdate];
                   }
                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"puts...");
+                      NSLog(@"Erro ao salvar score... Você deveria ter tratado esse caso :(");
                   }];
 }
 
