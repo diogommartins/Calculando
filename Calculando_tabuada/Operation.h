@@ -13,7 +13,7 @@
 
 @property int firstNumber;
 @property int secondNumber;
-@property (strong, nonatomic) NSNumber *userAnswer;
+@property int userAnswer;
 @property NSTimeInterval timestamp;
 @property int secondsLeft;
 
@@ -21,7 +21,8 @@
 - (BOOL) isCorrectUserAnswer;
 - (BOOL) isCorrectAnswer: (int)answer;
 - (int) correctAnswer;
-- (void) setUserAnswer:(NSNumber *)userAnswer secondsLeft:(int)seconds;
+- (void) setUserAnswer:(int)userAnswer secondsLeft:(int)seconds;
+- (instancetype)initWithNumbers:(int)firstNumber secondNumber:(int)secondNumber;
 - (instancetype)initWithRandomNumbers;
 - (NSString *) toString;
 

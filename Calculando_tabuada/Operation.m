@@ -19,7 +19,7 @@
 }
 
 - (BOOL) isCorrectUserAnswer{
-    return [self.userAnswer intValue] == [self correctAnswer];
+    return self.userAnswer == [self correctAnswer];
 }
 
 -(BOOL)isCorrectAnswer:(int)answer
@@ -27,17 +27,26 @@
     return [self correctAnswer] == answer;
 }
 
-- (void) setUserAnswer:(NSNumber *)userAnswer secondsLeft:(int)seconds{
+- (void) setUserAnswer:(int)userAnswer secondsLeft:(int)seconds{
     self.userAnswer = userAnswer;
     self.secondsLeft = seconds;
     self.timestamp = [[NSDate date] timeIntervalSince1970];
 }
 
+- (instancetype)initWithNumbers:(int)firstNumber secondNumber:(int)secondNumber{
+    if (self = [super init])
+    {
+        self.firstNumber = firstNumber;
+        self.secondNumber = secondNumber;
+    }
+    return self;
+}
+
 -(instancetype)initWithRandomNumbers{
     if (self = [super init])
     {
-        [self setFirstNumber: arc4random_uniform(MAX_NUMBER_VALUE)];
-        [self setSecondNumber: arc4random_uniform(MAX_NUMBER_VALUE)];
+        self.firstNumber = arc4random_uniform(MAX_NUMBER_VALUE);
+        self.secondNumber = arc4random_uniform(MAX_NUMBER_VALUE);
     }
     return self;
 }
