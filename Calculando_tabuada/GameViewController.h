@@ -27,7 +27,6 @@
 
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) MultiplicationGame *game;
-@property (strong, nonatomic) DMLeaderboard * leaderboard;
 
 - (IBAction)changeOperation:(UIButton *)sender;
 - (void)sendAnswer;

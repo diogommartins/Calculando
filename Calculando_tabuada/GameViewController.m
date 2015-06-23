@@ -39,10 +39,10 @@
 }
 
 -(void)timerDidEnd{
-    self.leaderboard = [[DMLeaderboard alloc] initWithPositions: 10];
-    [self.leaderboard saveScore: [[DMScore alloc] initWithScore: [NSNumber numberWithInt: self.game.score]
-                                                           user: self.game.username]];
-
+    DMLeaderboard * leaderboard = [[DMLeaderboard alloc] init];
+    [leaderboard saveScore: [[DMScore alloc] initWithScore: [NSNumber numberWithInt: self.game.score]
+                                                      user: self.game.username]];
+    
     [self performSegueWithIdentifier:@"showGameResults" sender:self];
 }
 

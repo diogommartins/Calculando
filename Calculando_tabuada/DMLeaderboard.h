@@ -36,6 +36,8 @@
 @property (strong, nonatomic) AFHTTPRequestOperationManager * apiManager;
 @property (strong, nonatomic) id <DMLeaderboardDelegate> delegate;
 
+// @todo Deveria ser um Singleton
+-(instancetype)init;
 -(instancetype)initWithPositions: (int)positions;
 -(void) update ;
 -(void) saveScore: (DMScore *)score;

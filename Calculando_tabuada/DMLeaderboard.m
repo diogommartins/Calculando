@@ -7,7 +7,7 @@
 //
 
 #import "DMLeaderboard.h"
-#define kLEADERBOARD_API_URL @"http://127.0.0.1:8000/calculando/leaderboard/api"
+#define kLEADERBOARD_API_URL @"http://192.168.1.106:8000/calculando/leaderboard/api"
 
 @implementation DMScore
 
@@ -39,6 +39,15 @@
 @end
 
 @implementation DMLeaderboard
+
+-(instancetype)init{
+    if (self = [super init])
+    {
+        self.apiManager = [AFHTTPRequestOperationManager manager];
+        self.positions = 0;
+    }
+    return self;
+}
 
 -(instancetype)initWithPositions:(int)positions{
     if (self = [super init])
